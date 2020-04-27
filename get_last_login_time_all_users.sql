@@ -9,7 +9,7 @@ INNER JOIN
 FROM 
    Audits 
 WHERE 
-   Audits.action = '/api/v4/users/login' AND Audits.extrainfo = 'success' 
+   Audits.action = '/api/v4/users/login' AND Audits.extrainfo LIKE 'success%' 
 GROUP BY 
    UserId) lastlogin
 ON 
@@ -27,7 +27,7 @@ INNER JOIN
 FROM 
    Audits 
 WHERE 
-   Audits.action = '/api/v4/users/login' AND Audits.extrainfo = 'success' 
+   Audits.action = '/api/v4/users/login' AND Audits.extrainfo LIKE 'success%' 
 GROUP BY 
    UserId) lastlogin
 ON 
